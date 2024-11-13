@@ -33,3 +33,4 @@
 - 30- Git
 - 31- Functional Programing
 - 32- Blochain
+- 33- GraphQl
