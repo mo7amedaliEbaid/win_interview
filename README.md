@@ -1,3 +1,22 @@
+```
+As per our conversation I would like to confirm your online interview for the Flutter developer - Tues 19 Nov 4pm
+Interview Link:
+Company profile:
+Main responsibilities:
+
+• Building multi-platform applications for Android and iOS using Flutter.
+• Writing clear and reader-friendly code using tools like Dart. Documenting the entire usage process in detail for straightforward utilization and upgrading in the future.
+• Collaborating with other developers to create, deploy, and maintain Flutter-based applications for different platforms.
+• Writing and reviewing multi-application codes.
+• Overseeing and reviewing application design.
+• Building, implementing, and managing product modules along with their sub-systems.
+• Debug and fix issues in development, testing, and production.
+• Carrying out unit testing and integration analysis.
+• Ensuring consistency between the delivered product features and the requirements/criteria of the business.
+• Use CI/CD for smooth deployment.
+
+```
+
 ## 17 Nov 2024
 
 # Study plane.
