@@ -53,3 +53,6 @@ Main responsibilities:
 - 31- Functional Programing
 - 32- Blochain
 - 33- GraphQl
+
+
+## https://git-scm.com/docs/git#_git_commands

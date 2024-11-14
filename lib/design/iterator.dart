@@ -55,3 +55,135 @@ void main() {
     print('Reading book: ${book.title}');
   }
 }
+// In Dart, the Iterator design pattern is implemented natively in the language through the Iterator and Iterable interfaces.
+// These interfaces are widely used in Dart collections like List, Set, and Map.
+//
+// Built-in Iterator and Iterable in Dart
+// Iterable:
+//
+// Represents a collection of elements that can be iterated over.
+// Provides a way to create an Iterator to traverse through elements.
+// Iterator:
+//
+// Moves sequentially through elements in an Iterable.
+// Provides moveNext() and current to access elements.
+// Key Methods and Properties
+// Iterator.moveNext(): Moves to the next element and returns true if there are more elements.
+// Iterator.current: Gets the current element in the iteration.
+// Common Dart Collections Using Iterator
+// List
+// Set
+// Map
+// Queue
+// These collections implement Iterable, allowing easy iteration.
+//
+// Example 1: Using for-in (Syntactic Sugar for Iterator)
+// The for-in loop uses the iterator under the hood.
+//
+// dart
+// Copy code
+// void main() {
+//   List<int> numbers = [1, 2, 3, 4, 5];
+//
+//   for (int number in numbers) {
+//     print('Number: $number');
+//   }
+// }
+// Example 2: Using Explicit Iterator
+// You can manually work with the Iterator to iterate over a collection:
+//
+// dart
+// Copy code
+// void main() {
+//   List<String> fruits = ['Apple', 'Banana', 'Cherry'];
+//
+//   Iterator<String> iterator = fruits.iterator;
+//
+//   while (iterator.moveNext()) {
+//     print('Fruit: ${iterator.current}');
+//   }
+// }
+// Example 3: Custom Iterable with Built-in Iterator
+// You can create a custom class that implements Iterable.
+//
+// dart
+// Copy code
+// class NumberRange extends Iterable<int> {
+//   final int start;
+//   final int end;
+//
+//   NumberRange(this.start, this.end);
+//
+//   @override
+//   Iterator<int> get iterator => _NumberRangeIterator(start, end);
+// }
+//
+// class _NumberRangeIterator implements Iterator<int> {
+//   final int start;
+//   final int end;
+//   int? _current;
+//   int _index;
+//
+//   _NumberRangeIterator(this.start, this.end) : _index = start - 1;
+//
+//   @override
+//   bool moveNext() {
+//     if (_index < end) {
+//       _index++;
+//       _current = _index;
+//       return true;
+//     }
+//     _current = null;
+//     return false;
+//   }
+//
+//   @override
+//   int get current => _current!;
+// }
+//
+// void main() {
+//   NumberRange range = NumberRange(1, 5);
+//
+//   for (int number in range) {
+//     print('Number: $number');
+//   }
+// }
+// Output:
+// javascript
+// Copy code
+// Number: 1
+// Number: 2
+// Number: 3
+// Number: 4
+// Number: 5
+// Built-in Functions Leveraging Iterators
+// forEach: Executes a function for each element in the collection.
+//
+// dart
+// Copy code
+// List<int> numbers = [10, 20, 30];
+// numbers.forEach((number) => print('Value: $number'));
+// map: Transforms each element in the collection.
+//
+// dart
+// Copy code
+// List<int> numbers = [1, 2, 3];
+// List<int> squares = numbers.map((n) => n * n).toList();
+// print(squares); // [1, 4, 9]
+// where: Filters elements based on a condition.
+//
+// dart
+// Copy code
+// List<int> numbers = [1, 2, 3, 4, 5];
+// List<int> evenNumbers = numbers.where((n) => n.isEven).toList();
+// print(evenNumbers); // [2, 4]
+// reduce and fold: Aggregates values.
+//
+// dart
+// Copy code
+// List<int> numbers = [1, 2, 3];
+// int sum = numbers.reduce((a, b) => a + b);
+// print(sum); // 6
+// Conclusion
+// Dart provides built-in support for the Iterator Pattern through the Iterable and Iterator interfaces,
+// making it easy to traverse collections. You can either use native collections like List or create custom iterables.
