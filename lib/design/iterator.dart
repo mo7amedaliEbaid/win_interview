@@ -1,10 +1,118 @@
+// Iterator Design Pattern
+// The Iterator Pattern is a behavioral design pattern that provides a way to access elements of a collection
+// (such as lists, sets, or other aggregates) sequentially without exposing its underlying structure.
+//
+// Key Concepts:
+// Iterator: Defines the interface for accessing and traversing the elements.
+// Concrete Iterator: Implements the Iterator interface to traverse a specific collection.
+// Aggregate: Defines an interface for creating an Iterator object.
+// Concrete Aggregate: Implements the Aggregate interface and returns a specific iterator.
+// Use Case
+// This pattern is useful when:
+//
+// You want to traverse different types of collections uniformly.
+// You want to abstract the traversal logic from the client.
+// Example in Dart
+// Let’s implement the Iterator pattern for a collection of Books.
+//
+// Step 1: Define the Iterator Interface
+// dart
+// Copy code
+// abstract class Iterator<T> {
+//   bool hasNext();
+//   T next();
+// }
+// Step 2: Define the Aggregate Interface
+// dart
+// Copy code
+// abstract class IterableCollection<T> {
+//   Iterator<T> createIterator();
+// }
+// Step 3: Create a Concrete Collection
+// dart
+// Copy code
+// class Book {
+//   final String title;
+//
+//   Book(this.title);
+// }
+//
+// class BookCollection implements IterableCollection<Book> {
+//   final List<Book> _books = [];
+//
+//   void addBook(Book book) {
+//     _books.add(book);
+//   }
+//
+//   @override
+//   Iterator<Book> createIterator() {
+//     return BookIterator(_books);
+//   }
+// }
+// Step 4: Implement the Concrete Iterator
+// dart
+// Copy code
+// class BookIterator implements Iterator<Book> {
+//   final List<Book> _books;
+//   int _currentIndex = 0;
+//
+//   BookIterator(this._books);
+//
+//   @override
+//   bool hasNext() {
+//     return _currentIndex < _books.length;
+//   }
+//
+//   @override
+//   Book next() {
+//     if (!hasNext()) {
+//       throw Exception('No more books.');
+//     }
+//     return _books[_currentIndex++];
+//   }
+// }
+// Step 5: Use the Iterator
+// dart
+// Copy code
+// void main() {
+//   BookCollection bookCollection = BookCollection();
+//   bookCollection.addBook(Book('Design Patterns in Dart'));
+//   bookCollection.addBook(Book('Clean Code'));
+//   bookCollection.addBook(Book('The Pragmatic Programmer'));
+//
+//   Iterator<Book> iterator = bookCollection.createIterator();
+//
+//   while (iterator.hasNext()) {
+//     Book book = iterator.next();
+//     print('Reading book: ${book.title}');
+//   }
+// }
+// Output:
+// yaml
+// Copy code
+// Reading book: Design Patterns in Dart
+// Reading book: Clean Code
+// Reading book: The Pragmatic Programmer
+// Explanation:
+// Iterator Interface: Defines hasNext() and next() methods to traverse the collection.
+// Concrete Iterator (BookIterator): Implements traversal logic for BookCollection.
+// Aggregate Interface (IterableCollection): Ensures that any collection can provide an Iterator.
+// Concrete Aggregate (BookCollection): Stores Book objects and provides an iterator.
+// Benefits of the Iterator Pattern:
+// Encapsulation of Traversal Logic: The client doesn't need to know the internal structure of the collection.
+// Uniform Access: Different collections can be traversed using the same interface.
+// Decoupling: The client and the collection are decoupled, allowing independent changes.
+
 abstract class Iterator<T> {
   bool hasNext();
+
   T next();
 }
+
 abstract class IterableCollection<T> {
   Iterator<T> createIterator();
 }
+
 class Book {
   final String title;
 
@@ -23,6 +131,7 @@ class BookCollection implements IterableCollection<Book> {
     return BookIterator(_books);
   }
 }
+
 class BookIterator implements Iterator<Book> {
   final List<Book> _books;
   int _currentIndex = 0;
@@ -42,6 +151,7 @@ class BookIterator implements Iterator<Book> {
     return _books[_currentIndex++];
   }
 }
+
 void main() {
   BookCollection bookCollection = BookCollection();
   bookCollection.addBook(Book('Design Patterns in Dart'));

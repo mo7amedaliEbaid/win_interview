@@ -1,11 +1,13 @@
 abstract class NewLogger {
   void writeLog(String message);
 }
+
 class OldLogger {
   void logMessage(String message) {
     print("Old Logger: $message");
   }
 }
+
 class LoggerAdapter implements NewLogger {
   final OldLogger oldLogger;
 
@@ -16,6 +18,7 @@ class LoggerAdapter implements NewLogger {
     oldLogger.logMessage(message); // Adapting the method call
   }
 }
+
 void main() {
   // Create an instance of OldLogger
   OldLogger oldLogger = OldLogger();
