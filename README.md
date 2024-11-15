@@ -17,7 +17,7 @@ Main responsibilities:
 
 ```
 
-## 17 Nov 2024
+## Tues 19 Nov 4pm
 
 # Study plane.
 
