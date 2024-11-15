@@ -10,14 +10,13 @@ List<int> sortArray(List<int> nums) {
 // 1. Insertion Sort
 List<int> insertionSort(List<int> nums) {
   for (var i = 1; i < nums.length; i++) {
-    int curr = nums[i];
-    int j = i - 1;
-
-    while (j >= 0 && nums[j] > curr) {
-      nums[j + 1] = nums[j];
+    int curr=nums[i];
+    int j=i-1;
+    while(j>=0&&curr<nums[j]){
+      nums[j+1]=nums[j];
       j--;
     }
-    nums[j + 1] = curr;
+    nums[j+1]=curr;
   }
   return nums;
 }
