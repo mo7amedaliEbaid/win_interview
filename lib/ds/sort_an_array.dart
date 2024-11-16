@@ -10,16 +10,37 @@ List<int> sortArray(List<int> nums) {
 // 1. Insertion Sort
 List<int> insertionSort(List<int> nums) {
   for (var i = 1; i < nums.length; i++) {
-    int curr=nums[i];
-    int j=i-1;
-    while(j>=0&&curr<nums[j]){
-      nums[j+1]=nums[j];
+    int curr = nums[i];
+    int j = i - 1;
+    while (j >= 0 && curr < nums[j]) {
+      nums[j + 1] = nums[j];
       j--;
     }
-    nums[j+1]=curr;
+    nums[j + 1] = curr;
   }
   return nums;
 }
+// [5,7,8,1,3]
+//  j i
+// curr= 7
+// j=0
+// while j>=0 and curr <nums[j]
+// j=0 and 7 , nums[j]=5 , 7<5 = false
+//nums[0+1]=nums[1]=7
+// 5,7,8,1,3
+// curr =nums[2]=8, j=2-1=1
+// j=1>0 and nums[j]=nums[1]=7, 8<7=false
+// nums[2]=8
+// 5,7,8,1,3
+// i=3, curr=nums[3]=1, j=3-1=2
+// j=2>0, 1<nums[j]=>8
+//nums[2+1]=nums[3]=nums[2]
+// 5,7,8,8,3
+// j=1
+// nums[2]=nums[1]=7
+// 5,7,7,8,3
+// 5,5,7,8,3
+// 1,5,7,8,3
 
 // 2. Merge Sort
 List<int> mergeSort(List<int> nums) {
