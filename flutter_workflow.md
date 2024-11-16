@@ -1,8 +1,7 @@
 ```
 
 explain step by step how flutter framework works under the hood , i mean from i finish writing the code and click start to the point when the app is created in the mobile and is visible on screen
-ChatGPT said:
-ChatGPT
+
 Here's a breakdown of what happens under the hood in Flutter, from writing code to seeing the app on the screen:
 
 1. Writing the Code and Pressing Start
@@ -51,8 +50,7 @@ Flutter’s unique design of managing its UI entirely within the framework enabl
 
 You said:
 explain step by step the process of building an apk
-ChatGPT said:
-ChatGPT
+
 Building an APK (Android Package Kit) in Flutter involves several steps that compile and package your Flutter code and assets into a format that Android devices can install and run. Here’s a detailed breakdown of the APK build process in Flutter:
 
 1. Prepare the Flutter Code for Compilation
@@ -115,10 +113,8 @@ Each of these steps helps create an APK that runs efficiently on Android devices
 
 
 
-You said:
 explain step by step the process of building an ios
-ChatGPT said:
-ChatGPT
+
 Building an iOS app in Flutter involves a multi-step process to convert your Dart code into a binary package (IPA) that can run on iOS devices. Here’s a detailed explanation of the iOS build process:
 
 1. Prepare Flutter Code and Dependencies
@@ -189,10 +185,8 @@ These steps ensure the iOS app is fully optimized, signed, and ready for install
 
 
 
-You said:
 what is the difference between apk and app bundle
-ChatGPT said:
-ChatGPT
+
 APK (Android Package Kit) and Android App Bundle (AAB) are two packaging formats used to distribute Android applications. While both are intended for app delivery, they serve slightly different purposes and offer unique advantages. Here’s a breakdown of the differences:
 
 1. Definition and Purpose
