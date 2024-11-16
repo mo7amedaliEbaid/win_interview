@@ -1,10 +1,10 @@
 main() {
-  print(sortArray([5, 2, 7, 9]));
+  print(sortArray([5, 2, 7, 9, 2, 8, 9, 6, 5, 55, 7, 8]));
 }
 
 List<int> sortArray(List<int> nums) {
   // Sort the array in ascending order by calling the desired sorting function
-  return insertionSort(nums);
+  return selectionSort(nums);
 }
 
 // 1. Insertion Sort
@@ -71,19 +71,19 @@ List<int> merge(List<int> left, List<int> right) {
 }
 
 // 3. Selection Sort
-List<int> selectionSort(List<int> nums) {
-  for (int i = 0; i < nums.length - 1; i++) {
+selectionSort(List<int> arr) {
+  int n = arr.length;
+  for (int i = 0; i < n - 1; i++) {
     int minIndex = i;
-    for (int j = i + 1; j < nums.length; j++) {
-      if (nums[j] < nums[minIndex]) {
+    for (int j = i + 1; j < n; j++) {
+      if (arr[j] < arr[minIndex]) {
         minIndex = j;
       }
     }
-    if (minIndex != i) {
-      int temp = nums[i];
-      nums[i] = nums[minIndex];
-      nums[minIndex] = temp;
-    }
+    // Swap arr[i] and arr[minIndex]
+    int temp = arr[i];
+    arr[i] = arr[minIndex];
+    arr[minIndex] = temp;
   }
-  return nums;
+  return arr;
 }
