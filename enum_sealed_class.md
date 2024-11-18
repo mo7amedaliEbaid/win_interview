@@ -1,18 +1,23 @@
 ```
 
-In general, the difference between enums and sealed classes applies across languages like Java, Kotlin, Dart, and others, though the specific features and syntax may vary. Here's a broad comparison, with examples from Java to clarify:
+In general, the difference between enums and sealed classes applies
+across languages like Java, Kotlin, Dart, and others,
+though the specific features and syntax may vary.
+Here's a broad comparison, with examples from Java to clarify:
 
 1. Enums (Enumerations)
 Definition:
-An enum is a special type that represents a fixed set of named constants. In many languages, including Java, enums can also have methods and fields, making them more than just simple constants.
+An enum is a special type that represents a fixed set of named constants.
+In many languages, including Java, enums can also have methods and fields,
+making them more than just simple constants.
 
 Key Characteristics:
 Fixed constants: The set of constants in an enum is pre-defined and cannot be extended.
 Singleton-like instances: Each constant is a unique instance of the enum.
-Can have methods and fields: In Java, enums can define methods and fields, allowing behavior to be attached to constants.
+Can have methods and fields: In Java, enums can define methods and fields,
+allowing behavior to be attached to constants.
 Usage in Java:
-java
-Copy code
+
 enum Color {
     RED, GREEN, BLUE;
 
@@ -27,20 +32,22 @@ public class Main {
         color.printColor(); // Output: Selected color: RED
     }
 }
+
 Typical Use Cases:
 Representing fixed sets like days of the week, directions, or states of an object.
 When each constant can optionally have associated behavior or state.
+
 2. Sealed Classes
 Definition:
-A sealed class is a more flexible way to define a closed hierarchy of types. Only a specific set of classes can extend or implement a sealed class.
+A sealed class is a more flexible way to define a closed hierarchy of types.
+Only a specific set of classes can extend or implement a sealed class.
 
 Key Characteristics:
 Closed hierarchy: You control which classes can extend or implement the sealed class.
 Subtypes may have distinct behavior and state.
 Exhaustive pattern matching: Enforces handling of all possible subtypes at compile time.
 Usage in Java (Since Java 15):
-java
-Copy code
+
 sealed class Shape permits Circle, Rectangle {}
 
 final class Circle extends Shape {
@@ -71,6 +78,7 @@ public class Main {
         }
     }
 }
+
 Typical Use Cases:
 Modeling hierarchies of related classes.
 Situations where each subtype may hold different data or have different methods.
@@ -85,6 +93,7 @@ Use Case	Simple categorical values	Complex hierarchies with varied data
 Example	Days of the week, traffic light colors	Geometric shapes, sealed event hierarchies
 Key Differences in Java:
 Enums are best when you have a fixed set of constant values, possibly with some shared behavior.
-Sealed classes are better when you have a fixed set of types that share a common supertype but may have different fields and methods.
+Sealed classes are better when you have a fixed set of types that share a common supertype
+but may have different fields and methods.
 
 ```
