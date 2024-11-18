@@ -1,12 +1,15 @@
 ```agsl
 
-what is dartz
-ChatGPT said:
-ChatGPT
-Dartz is a functional programming library for the Dart language. It provides tools and data types that enable developers to write functional-style code, focusing on immutability, composability, and safer handling of operations like errors, nullability, and asynchronous computations.
+Dartz is a functional programming library for the Dart language.
+It provides tools and data types that enable developers to write functional-style code,
+focusing on immutability, composability,
+and safer handling of operations like errors,
+nullability, and asynchronous computations.
 
 Key Features of Dartz
-Dartz introduces several functional programming constructs commonly found in languages like Haskell, Scala, or Elm. Below are some of its core concepts and utilities:
+Dartz introduces several functional programming constructs commonly
+found in languages like Haskell, Scala, or Elm.
+Below are some of its core concepts and utilities:
 
 1. Option
 Represents a value that may or may not exist (similar to Dart's null but safer).
