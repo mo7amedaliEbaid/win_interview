@@ -20,8 +20,6 @@ This helps avoid null checks and NullPointerException-like errors.
 
 Example:
 
-dart
-Copy code
 import 'package:dartz/dartz.dart';
 
 Option<int> someValue = Some(10);
@@ -36,10 +34,9 @@ Represents a computation that can return one of two possible types. Typically us
 
 Left: Represents a failure or error.
 Right: Represents a success or valid result.
+
 Example:
 
-dart
-Copy code
 import 'package:dartz/dartz.dart';
 
 Either<String, int> divide(int a, int b) {
@@ -55,13 +52,12 @@ result.fold(
   (l) => print("Error: $l"),  // Left case (error).
   (r) => print("Result: $r"), // Right case (success).
 );
+
 3. Task and TaskEither
 Task: Encapsulates an asynchronous computation that returns a value.
 TaskEither: Similar to Task, but supports error handling like Either.
-Example:
 
-dart
-Copy code
+Example:
 import 'package:dartz/dartz.dart';
 
 Task<int> asyncTask() => Task(() async => 42);
@@ -69,17 +65,18 @@ Task<int> asyncTask() => Task(() async => 42);
 void main() {
   asyncTask().run().then((value) => print("Value: $value")); // Outputs 42.
 }
+
 4. Validation
 Provides a way to validate data through a combination of multiple operations.
 It's a more advanced form of error aggregation than Either.
 
 5. Functional Utilities
 Dartz also provides several utility functions to make functional programming easier:
-
 fold, map, flatMap, filter, etc., for manipulating data structures.
 Tuples (immutable, fixed-length collections of values).
 Immutable collections like IList and ISet.
 Benefits of Using Dartz
+
 Safe Error Handling:
 
 Avoids the traditional try-catch by using Either.
@@ -97,8 +94,7 @@ Better Abstraction:
 
 Cleaner, more predictable code by modeling operations (success and failure) explicitly.
 Example Use Case: API Request with Error Handling
-dart
-Copy code
+
 import 'package:dartz/dartz.dart';
 
 Future<Either<String, int>> fetchData() async {
