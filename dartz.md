@@ -70,7 +70,8 @@ void main() {
   asyncTask().run().then((value) => print("Value: $value")); // Outputs 42.
 }
 4. Validation
-Provides a way to validate data through a combination of multiple operations. It's a more advanced form of error aggregation than Either.
+Provides a way to validate data through a combination of multiple operations.
+It's a more advanced form of error aggregation than Either.
 
 5. Functional Utilities
 Dartz also provides several utility functions to make functional programming easier:
@@ -119,5 +120,7 @@ void main() async {
   );
 }
 Conclusion
-Dartz brings functional programming paradigms to Dart, improving the way developers handle errors, nullability, and asynchronous computations. It's especially useful in building scalable, predictable, and maintainable applications, like those with complex data transformations or state management needs.
+Dartz brings functional programming paradigms to Dart, improving the way developers handle errors, nullability,
+and asynchronous computations. It's especially useful in building scalable, predictable,
+and maintainable applications, like those with complex data transformations or state management needs.
 ```
