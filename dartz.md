@@ -1,12 +1,15 @@
 ```agsl
 
-what is dartz
-ChatGPT said:
-ChatGPT
-Dartz is a functional programming library for the Dart language. It provides tools and data types that enable developers to write functional-style code, focusing on immutability, composability, and safer handling of operations like errors, nullability, and asynchronous computations.
+Dartz is a functional programming library for the Dart language.
+It provides tools and data types that enable developers to write functional-style code,
+focusing on immutability, composability,
+and safer handling of operations like errors,
+nullability, and asynchronous computations.
 
 Key Features of Dartz
-Dartz introduces several functional programming constructs commonly found in languages like Haskell, Scala, or Elm. Below are some of its core concepts and utilities:
+Dartz introduces several functional programming constructs commonly
+found in languages like Haskell, Scala, or Elm.
+Below are some of its core concepts and utilities:
 
 1. Option
 Represents a value that may or may not exist (similar to Dart's null but safer).
@@ -17,8 +20,6 @@ This helps avoid null checks and NullPointerException-like errors.
 
 Example:
 
-dart
-Copy code
 import 'package:dartz/dartz.dart';
 
 Option<int> someValue = Some(10);
@@ -33,10 +34,9 @@ Represents a computation that can return one of two possible types. Typically us
 
 Left: Represents a failure or error.
 Right: Represents a success or valid result.
+
 Example:
 
-dart
-Copy code
 import 'package:dartz/dartz.dart';
 
 Either<String, int> divide(int a, int b) {
@@ -52,13 +52,12 @@ result.fold(
   (l) => print("Error: $l"),  // Left case (error).
   (r) => print("Result: $r"), // Right case (success).
 );
+
 3. Task and TaskEither
 Task: Encapsulates an asynchronous computation that returns a value.
 TaskEither: Similar to Task, but supports error handling like Either.
-Example:
 
-dart
-Copy code
+Example:
 import 'package:dartz/dartz.dart';
 
 Task<int> asyncTask() => Task(() async => 42);
@@ -66,16 +65,18 @@ Task<int> asyncTask() => Task(() async => 42);
 void main() {
   asyncTask().run().then((value) => print("Value: $value")); // Outputs 42.
 }
+
 4. Validation
-Provides a way to validate data through a combination of multiple operations. It's a more advanced form of error aggregation than Either.
+Provides a way to validate data through a combination of multiple operations.
+It's a more advanced form of error aggregation than Either.
 
 5. Functional Utilities
 Dartz also provides several utility functions to make functional programming easier:
-
 fold, map, flatMap, filter, etc., for manipulating data structures.
 Tuples (immutable, fixed-length collections of values).
 Immutable collections like IList and ISet.
 Benefits of Using Dartz
+
 Safe Error Handling:
 
 Avoids the traditional try-catch by using Either.
@@ -93,8 +94,7 @@ Better Abstraction:
 
 Cleaner, more predictable code by modeling operations (success and failure) explicitly.
 Example Use Case: API Request with Error Handling
-dart
-Copy code
+
 import 'package:dartz/dartz.dart';
 
 Future<Either<String, int>> fetchData() async {
@@ -116,5 +116,7 @@ void main() async {
   );
 }
 Conclusion
-Dartz brings functional programming paradigms to Dart, improving the way developers handle errors, nullability, and asynchronous computations. It's especially useful in building scalable, predictable, and maintainable applications, like those with complex data transformations or state management needs.
+Dartz brings functional programming paradigms to Dart, improving the way developers handle errors, nullability,
+and asynchronous computations. It's especially useful in building scalable, predictable,
+and maintainable applications, like those with complex data transformations or state management needs.
 ```
