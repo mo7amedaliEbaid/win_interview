@@ -83,14 +83,12 @@ void main() {
 // (e.g., CreditCardPayment, PayPalPayment, BitcoinPayment).
 //
 // Step 1: Define the Strategy Interface
-// dart
-// Copy code
+
 // abstract class PaymentStrategy {
 //   void pay(double amount);
 // }
 // Step 2: Implement Concrete Strategies
-// dart
-// Copy code
+
 // class CreditCardPayment implements PaymentStrategy {
 //   final String cardNumber;
 //
@@ -126,8 +124,7 @@ void main() {
 // Step 3: Create the Context Class
 // The PaymentContext will use the strategy to execute the payment.
 //
-// dart
-// Copy code
+
 // class PaymentContext {
 //   PaymentStrategy? _paymentStrategy;
 //
@@ -144,8 +141,7 @@ void main() {
 //   }
 // }
 // Step 4: Use the Strategy Pattern
-// dart
-// Copy code
+
 // void main() {
 //   PaymentContext paymentContext = PaymentContext();
 //
@@ -162,8 +158,6 @@ void main() {
 //   paymentContext.pay(0.05);
 // }
 // Output
-// sql
-// Copy code
 // Paid $100.00 using Credit Card: 1234-5678-9012-3456
 // Paid $200.00 using PayPal: user@example.com
 // Paid $0.05 using Bitcoin: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa

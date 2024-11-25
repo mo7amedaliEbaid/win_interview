@@ -88,8 +88,7 @@ void main() {
 // 1. Subsystems
 // Each subsystem has its own detailed implementation:
 //
-// dart
-// Copy code
+
 // class Lights {
 //   void turnOn() => print("Lights turned on.");
 //   void turnOff() => print("Lights turned off.");
@@ -109,8 +108,6 @@ void main() {
 // 2. Facade
 // The HomeAutomationFacade simplifies interactions with these subsystems:
 //
-// dart
-// Copy code
 // class HomeAutomationFacade {
 //   final Lights _lights;
 //   final AirConditioner _airConditioner;
@@ -146,8 +143,6 @@ void main() {
 // 3. Client
 // The client uses the facade to control the home automation system without worrying about subsystem details:
 //
-// dart
-// Copy code
 // void main() {
 //   // Subsystem instances
 //   Lights lights = Lights();

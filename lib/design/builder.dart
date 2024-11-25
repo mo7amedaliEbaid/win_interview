@@ -126,8 +126,6 @@ void main() {
 // Example in Dart
 // Scenario: Building a House object with optional features like a swimming pool, garage, and garden.
 // 1. Product (House)
-// dart
-// Copy code
 // class House {
 //   String? foundation;
 //   String? structure;
@@ -162,8 +160,7 @@ void main() {
 //   House getHouse();
 // }
 // 3. Concrete Builder (LuxuryHouseBuilder)
-// dart
-// Copy code
+
 // class LuxuryHouseBuilder implements HouseBuilder {
 //   final House _house = House();
 //
@@ -205,8 +202,6 @@ void main() {
 // 4. Director (HouseDirector)
 // The director ensures the builder follows a specific construction sequence.
 //
-// dart
-// Copy code
 // class HouseDirector {
 //   final HouseBuilder builder;
 //
@@ -230,8 +225,6 @@ void main() {
 //   }
 // }
 // 5. Client
-// dart
-// Copy code
 // void main() {
 //   // Create a LuxuryHouseBuilder instance
 //   LuxuryHouseBuilder luxuryBuilder = LuxuryHouseBuilder();
@@ -248,8 +241,7 @@ void main() {
 //   print("Simple House Built:\n$simpleHouse");
 // }
 // Output
-// yaml
-// Copy code
+
 // Luxury House Built:
 //     House:
 //       Foundation: Concrete, steel, and reinforced beams

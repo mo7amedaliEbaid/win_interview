@@ -45,14 +45,10 @@ void main() {
 //
 // Implementation
 // 1. Target Interface (NewLogger)
-// dart
-// Copy code
 // abstract class NewLogger {
 //   void writeLog(String message);
 // }
 // 2. Adaptee (OldLogger)
-// dart
-// Copy code
 // class OldLogger {
 //   void logMessage(String message) {
 //     print("Old Logger: $message");
@@ -61,8 +57,6 @@ void main() {
 // 3. Adapter (LoggerAdapter)
 // The adapter implements the NewLogger interface and translates calls to the OldLogger.
 //
-// dart
-// Copy code
 // class LoggerAdapter implements NewLogger {
 //   final OldLogger oldLogger;
 //
@@ -76,8 +70,6 @@ void main() {
 // 4. Client
 // The client works with the NewLogger interface but can now use OldLogger through the adapter.
 //
-// dart
-// Copy code
 // void main() {
 //   // Create an instance of OldLogger
 //   OldLogger oldLogger = OldLogger();
@@ -128,8 +120,6 @@ void main() {
 //
 // Steps to Implement
 // 1. API Data Model
-// dart
-// Copy code
 // // API Data Model
 // class User {
 //   final int id;
@@ -160,8 +150,7 @@ void main() {
 // Hive requires a class to have a simpler structure, often with a type adapter.
 // For this, we can implement the adapter pattern by creating a Hive-compatible version of the User.
 //
-// dart
-// Copy code
+
 // // Hive-compatible User Model
 // @HiveType(typeId: 1)
 // class HiveUser {
@@ -179,8 +168,6 @@ void main() {
 // 3. Adapter Implementation
 // The adapter bridges the gap between User (API model) and HiveUser (local storage model).
 //
-// dart
-// Copy code
 // class UserAdapter {
 //   // Convert User (API model) to HiveUser (local model)
 //   static HiveUser toHiveUser(User user) {
@@ -201,8 +188,6 @@ void main() {
 //   }
 // }
 // 4. Usage Example
-// dart
-// Copy code
 // void main() async {
 //   // Step 1: Simulate API response
 //   Map<String, dynamic> apiResponse = {
@@ -250,14 +235,4 @@ void main() {
 // Hide the complexity of converting data models from the client code.
 // Consistency:
 // Ensure data integrity by using the same adapter logic for conversions throughout the application.
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// ChatGP
+
