@@ -63,8 +63,6 @@ void main() {
 // Let’s walk through an example of how you can use a factory constructor with a fromJson() method when working with API responses in Dart.
 //
 // 1. Model Class with fromJson() Method
-// dart
-// Copy code
 // import 'dart:convert';
 //
 // // Step 1: Define a model class
@@ -138,8 +136,6 @@ void main() {
 // you can extend the fromJson pattern to handle lists as well.
 //
 // Example of List of Users:
-// dart
-// Copy code
 // class User {
 //   final int id;
 //   final String name;
