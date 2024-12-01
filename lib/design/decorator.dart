@@ -72,15 +72,13 @@ void main() {
 // to dynamically add different toppings, like Milk and Sugar.
 //
 // Step 1: Define the Component Interface
-// dart
-// Copy code
+
 // abstract class Coffee {
 //   String getDescription();
 //   double getCost();
 // }
 // Step 2: Create a Concrete Component
-// dart
-// Copy code
+
 // class SimpleCoffee implements Coffee {
 //   @override
 //   String getDescription() => "Simple coffee";
@@ -89,8 +87,6 @@ void main() {
 //   double getCost() => 5.0;
 // }
 // Step 3: Create the Decorator
-// dart
-// Copy code
 // abstract class CoffeeDecorator implements Coffee {
 //   final Coffee coffee;
 //
@@ -103,8 +99,7 @@ void main() {
 //   double getCost() => coffee.getCost();
 // }
 // Step 4: Create Concrete Decorators
-// dart
-// Copy code
+
 // class MilkDecorator extends CoffeeDecorator {
 //   MilkDecorator(Coffee coffee) : super(coffee);
 //
@@ -126,9 +121,7 @@ void main() {
 // }
 // Step 5: Using the Decorators
 // Now, we can create a SimpleCoffee object and decorate it with MilkDecorator and SugarDecorator to add milk and sugar.
-//
-// dart
-// Copy code
+
 // void main() {
 //   Coffee coffee = SimpleCoffee();
 //   print("${coffee.getDescription()} costs \$${coffee.getCost()}");
@@ -140,8 +133,6 @@ void main() {
 //   print("${coffee.getDescription()} costs \$${coffee.getCost()}");
 // }
 // Output
-// bash
-// Copy code
 // Simple coffee costs $5.0
 // Simple coffee, milk costs $6.5
 // Simple coffee, milk, sugar costs $7.0

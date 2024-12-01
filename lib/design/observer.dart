@@ -83,22 +83,19 @@ void main() {
 // Example in Dart
 // Scenario: A NewsAgency notifies subscribers whenever new news is published.
 // 1. Observer Interface
-// dart
-// Copy code
+
 // abstract class Observer {
 //   void update(String news);
 // }
 // 2. Subject Interface
-// dart
-// Copy code
+
 // abstract class Subject {
 //   void addObserver(Observer observer);
 //   void removeObserver(Observer observer);
 //   void notifyObservers();
 // }
 // 3. Concrete Subject (NewsAgency)
-// dart
-// Copy code
+
 // class NewsAgency implements Subject {
 //   final List<Observer> _observers = [];
 //   String _latestNews = '';
@@ -126,8 +123,7 @@ void main() {
 //   }
 // }
 // 4. Concrete Observer (Subscriber)
-// dart
-// Copy code
+
 // class Subscriber implements Observer {
 //   final String name;
 //
@@ -139,8 +135,7 @@ void main() {
 //   }
 // }
 // 5. Client
-// dart
-// Copy code
+
 // void main() {
 //   // Create the subject
 //   NewsAgency newsAgency = NewsAgency();
@@ -163,8 +158,7 @@ void main() {
 //   newsAgency.publishNews("Update: Dart 3.1 is now available!");
 // }
 // Output
-// sql
-// Copy code
+
 // Alice received news update: Breaking: New Dart version released!
 // Bob received news update: Breaking: New Dart version released!
 //
