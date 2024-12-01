@@ -16,21 +16,15 @@
 // Let’s implement the Iterator pattern for a collection of Books.
 //
 // Step 1: Define the Iterator Interface
-// dart
-// Copy code
 // abstract class Iterator<T> {
 //   bool hasNext();
 //   T next();
 // }
 // Step 2: Define the Aggregate Interface
-// dart
-// Copy code
 // abstract class IterableCollection<T> {
 //   Iterator<T> createIterator();
 // }
 // Step 3: Create a Concrete Collection
-// dart
-// Copy code
 // class Book {
 //   final String title;
 //
@@ -50,8 +44,6 @@
 //   }
 // }
 // Step 4: Implement the Concrete Iterator
-// dart
-// Copy code
 // class BookIterator implements Iterator<Book> {
 //   final List<Book> _books;
 //   int _currentIndex = 0;
@@ -72,8 +64,6 @@
 //   }
 // }
 // Step 5: Use the Iterator
-// dart
-// Copy code
 // void main() {
 //   BookCollection bookCollection = BookCollection();
 //   bookCollection.addBook(Book('Design Patterns in Dart'));
@@ -88,8 +78,6 @@
 //   }
 // }
 // Output:
-// yaml
-// Copy code
 // Reading book: Design Patterns in Dart
 // Reading book: Clean Code
 // Reading book: The Pragmatic Programmer
@@ -202,8 +190,6 @@ void main() {
 // Example 2: Using Explicit Iterator
 // You can manually work with the Iterator to iterate over a collection:
 //
-// dart
-// Copy code
 // void main() {
 //   List<String> fruits = ['Apple', 'Banana', 'Cherry'];
 //
@@ -216,8 +202,6 @@ void main() {
 // Example 3: Custom Iterable with Built-in Iterator
 // You can create a custom class that implements Iterable.
 //
-// dart
-// Copy code
 // class NumberRange extends Iterable<int> {
 //   final int start;
 //   final int end;
@@ -259,8 +243,6 @@ void main() {
 //   }
 // }
 // Output:
-// javascript
-// Copy code
 // Number: 1
 // Number: 2
 // Number: 3
@@ -269,28 +251,20 @@ void main() {
 // Built-in Functions Leveraging Iterators
 // forEach: Executes a function for each element in the collection.
 //
-// dart
-// Copy code
 // List<int> numbers = [10, 20, 30];
 // numbers.forEach((number) => print('Value: $number'));
 // map: Transforms each element in the collection.
 //
-// dart
-// Copy code
 // List<int> numbers = [1, 2, 3];
 // List<int> squares = numbers.map((n) => n * n).toList();
 // print(squares); // [1, 4, 9]
 // where: Filters elements based on a condition.
 //
-// dart
-// Copy code
 // List<int> numbers = [1, 2, 3, 4, 5];
 // List<int> evenNumbers = numbers.where((n) => n.isEven).toList();
 // print(evenNumbers); // [2, 4]
 // reduce and fold: Aggregates values.
 //
-// dart
-// Copy code
 // List<int> numbers = [1, 2, 3];
 // int sum = numbers.reduce((a, b) => a + b);
 // print(sum); // 6

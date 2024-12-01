@@ -93,9 +93,7 @@ class ThreadSafeSingleton {
 //
 // 1. Lazy Singleton Implementation
 // This approach ensures the instance is created only when it is first accessed.
-//
-// dart
-// Copy code
+
 // class Singleton {
 //   // Private constructor
 //   Singleton._privateConstructor();
@@ -114,8 +112,7 @@ class ThreadSafeSingleton {
 //   }
 // }
 // Usage
-// dart
-// Copy code
+
 // void main() {
 //   var singleton1 = Singleton();
 //   var singleton2 = Singleton();
@@ -127,8 +124,7 @@ class ThreadSafeSingleton {
 // 2. Eager Singleton Implementation
 // In this version, the instance is created as soon as the class is loaded.
 //
-// dart
-// Copy code
+
 // class EagerSingleton {
 //   // Private constructor
 //   EagerSingleton._privateConstructor();
@@ -159,8 +155,7 @@ class ThreadSafeSingleton {
 // 3. Thread-Safe Singleton Implementation
 // In multi-threaded environments, you can ensure thread safety using Dart’s synchronized package or other mechanisms.
 //
-// dart
-// Copy code
+
 // import 'dart:async';
 //
 // class ThreadSafeSingleton {
@@ -184,8 +179,6 @@ class ThreadSafeSingleton {
 //   }
 // }
 // Usage
-// dart
-// Copy code
 // void main() async {
 //   var singleton1 = await ThreadSafeSingleton.getInstance();
 //   var singleton2 = await ThreadSafeSingleton.getInstance();
