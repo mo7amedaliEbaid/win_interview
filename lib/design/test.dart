@@ -1,75 +1,54 @@
-abstract class Coffee {
-  String getDescription();
+class AirConditioner {
+  void turnOn() => print("turn on conditioner");
 
-  String getCost();
+  void turnOff() => print("turn off conditioner");
 }
 
-class SimpleCoffee implements Coffee {
-  @override
-  String getCost() {
-    return "SimpleCost";
-  }
+class Lights {
+  void turnOn() => print("turn on lights");
 
-  @override
-  String getDescription() {
-    return "Simple Description";
-  }
+  void turnOff() => print("turn off lights");
 }
 
-abstract class CoffeeDecorator implements Coffee {
-  final Coffee coffee;
+class Tv {
+  void turnOn() => print("turn on tv");
 
-  CoffeeDecorator(this.coffee);
-
-  @override
-  String getCost() {
-    return coffee.getDescription();
-  }
-
-  @override
-  String getDescription() {
-    return coffee.getCost();
-  }
+  void turnOff() => print("turn off tv");
 }
 
-class SugarCoffee extends CoffeeDecorator {
-  SugarCoffee(super.coffee);
+class RoomFacade {
+  final Lights lights;
+  final Tv tv;
+  final AirConditioner airConditioner;
 
-  @override
-  String getCost() {
-    return "Sugar Cost";
+  RoomFacade({
+    required this.tv,
+    required this.lights,
+    required this.airConditioner,
+  });
+
+  void startDayMode() {
+    lights.turnOn();
+    airConditioner.turnOn();
+    tv.turnOn();
   }
 
-  @override
-  String getDescription() {
-    return "Sugar Description";
-  }
-}
-
-class MilkCoffee extends CoffeeDecorator {
-  MilkCoffee(super.coffee);
-
-  @override
-  String getCost() {
-    return "Milk Cost";
-  }
-
-  @override
-  String getDescription() {
-    return "Milk Description";
+  void startSleepMood() {
+    tv.turnOff();
+    lights.turnOff();
+    airConditioner.turnOff();
   }
 }
 
 main() {
-  Coffee coffee = SimpleCoffee();
-  print(coffee.getCost());
-  print(coffee.getDescription());
+  Lights lights = Lights();
+  AirConditioner airConditioner = AirConditioner();
+  Tv tv = Tv();
 
-  coffee = SugarCoffee(coffee);
-  print(coffee.getCost());
-  print(coffee.getDescription());
+  RoomFacade roomFacade =
+      RoomFacade(tv: tv, lights: lights, airConditioner: airConditioner);
 
-  coffee = MilkCoffee(coffee);
-  print(coffee.getCost());
-  print(coffee.getDescription());
+  roomFacade.startDayMode();
+  roomFacade.startSleepMood();
 }
+// provide a simplified interface to a larger, more complex subsystems,
