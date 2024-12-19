@@ -8,6 +8,88 @@ Secure APIs: Use HTTPS with certificate pinning to secure API calls.
 Input Validation: Protect against injection attacks by validating and sanitizing user inputs.
 Least Privilege Principle: Restrict permissions to only what's necessary.
 Code Obfuscation: Obfuscate the Dart code using tools like ProGuard or R8.
+https://medium.com/@ChanakaDev/simplifying-android-proguard-rules-in-flutter-apps-2bfa6a1d5e68
+
+- AES (Advanced Encryption Standard) and TLS (Transport Layer Security)
+- are cryptographic technologies that help secure data in different contexts:
+
+- AES (Advanced Encryption Standard)
+What it is: A symmetric encryption algorithm used to secure data at rest (stored data).
+Key Features:
+Symmetric: The same key is used for both encryption (locking the data) and decryption (unlocking the data).
+Secure: Widely considered secure when using appropriate key sizes (e.g., 128-bit, 192-bit, or 256-bit).
+Fast: Optimized for performance, making it ideal for encrypting large amounts of data.
+Use Cases:
+Encrypting files or databases.
+Protecting sensitive information in applications.
+How it works: Converts plaintext into ciphertext using mathematical transformations, 
+making the data unreadable without the correct key.
+
+- TLS (Transport Layer Security)
+What it is: A cryptographic protocol that ensures secure communication over networks,
+- primarily used for data in transit.
+
+Key Features:
+Asymmetric & Symmetric Encryption: Uses asymmetric encryption (public/private keys) to establish a secure connection, 
+then switches to symmetric encryption (e.g., AES) for faster data transmission.
+Authentication: Verifies the identity of the communicating parties using certificates.
+Integrity: Ensures data isn't tampered with during transit using cryptographic hashes.
+Encryption: Protects data from eavesdropping.
+Use Cases:
+Securing web traffic (HTTPS uses TLS).
+Encrypting email (e.g., SMTP with STARTTLS).
+Protecting APIs or other network communications.
+How it works:
+A handshake establishes a secure connection and exchanges encryption keys.
+Subsequent communication is encrypted using the agreed-upon keys and cipher suite.
+
+- OAuth 2.0 and SAML (Security Assertion Markup Language)
+Both OAuth 2.0 and SAML are frameworks for authentication and authorization, 
+but they are used in different contexts and solve slightly different problems. Here’s an overview:
+
+OAuth 2.0
+What it is: An open standard for authorization, primarily used to allow third-party applications 
+limited access to user resources without exposing credentials.
+Key Features:
+Authorization (not authentication): OAuth 2.0 grants access to resources (e.g., accessing a user’s Google Drive)
+without sharing the user's credentials.
+Token-based: Issues an access token to the requesting application.
+User Consent: Users explicitly grant permission to applications requesting access.
+Flows:
+Authorization Code Flow: Most secure, used in web apps.
+Implicit Flow: Used for browser-based or mobile apps (less secure, less common now).
+Client Credentials Flow: For server-to-server communication.
+Password Grant: Deprecated due to security concerns.
+Use Cases:
+Login with Google/Facebook/Apple.
+Allowing apps to access APIs or cloud services on behalf of users.
+How it works:
+The user logs in via an authorization server (e.g., Google).
+The user grants the app permission to access specific resources.
+The app gets an access token to call APIs on the user's behalf.
+SAML (Security Assertion Markup Language)
+What it is: An XML-based open standard for exchanging authentication and authorization data between parties 
+(identity providers and service providers).
+Key Features:
+Authentication & Authorization: SAML focuses on verifying user identity (authentication) and passing permissions (authorization).
+Single Sign-On (SSO): Enables users to log in once and access multiple services.
+XML-based: Relies on XML for secure data exchange.
+Parties:
+Identity Provider (IdP): Authenticates the user (e.g., Okta, Active Directory).
+Service Provider (SP): Provides access to the requested service (e.g., Salesforce).
+Use Cases:
+Enterprise applications where SSO is required.
+Logging into corporate apps with a single identity (e.g., using your company's account to access multiple tools).
+How it works:
+The user tries to access a service provider (SP).
+The SP redirects the user to the identity provider (IdP) for authentication.
+The IdP authenticates the user and sends an assertion (via XML) back to the SP.
+The SP grants access based on the assertion.
+
+Summary
+OAuth 2.0 is best for granting limited access to user resources in modern, web, and mobile applications.
+SAML is ideal for enterprise-level Single Sign-On (SSO) solutions, enabling seamless user authentication across multiple applications.
+
 2. How would you protect sensitive data on the user's device?
 Answer:
 
