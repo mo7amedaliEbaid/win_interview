@@ -1,54 +1,49 @@
-class AirConditioner {
-  void turnOn() => print("turn on conditioner");
-
-  void turnOff() => print("turn off conditioner");
+abstract class Vehicle {
+  deliver();
 }
 
-class Lights {
-  void turnOn() => print("turn on lights");
-
-  void turnOff() => print("turn off lights");
-}
-
-class Tv {
-  void turnOn() => print("turn on tv");
-
-  void turnOff() => print("turn off tv");
-}
-
-class RoomFacade {
-  final Lights lights;
-  final Tv tv;
-  final AirConditioner airConditioner;
-
-  RoomFacade({
-    required this.tv,
-    required this.lights,
-    required this.airConditioner,
-  });
-
-  void startDayMode() {
-    lights.turnOn();
-    airConditioner.turnOn();
-    tv.turnOn();
+class Bike extends Vehicle {
+  @override
+  deliver() {
+    print("d by bike");
   }
+}
 
-  void startSleepMood() {
-    tv.turnOff();
-    lights.turnOff();
-    airConditioner.turnOff();
+class Car extends Vehicle {
+  @override
+  deliver() {
+    print("d by car");
+  }
+}
+
+abstract class Transport {
+// factory Method
+  Vehicle createVehicle();
+
+  startDelivery() {
+    Vehicle vehicle = createVehicle();
+    vehicle.deliver();
+  }
+}
+
+class BikeTransport extends Transport {
+  @override
+  Vehicle createVehicle() {
+    return Bike();
+  }
+}
+
+class CarTransport extends Transport {
+  @override
+  Vehicle createVehicle() {
+    return Car();
   }
 }
 
 main() {
-  Lights lights = Lights();
-  AirConditioner airConditioner = AirConditioner();
-  Tv tv = Tv();
+  Transport car = CarTransport();
+  Transport bike = BikeTransport();
 
-  RoomFacade roomFacade =
-      RoomFacade(tv: tv, lights: lights, airConditioner: airConditioner);
-
-  roomFacade.startDayMode();
-  roomFacade.startSleepMood();
+  car.startDelivery();
+  bike.startDelivery();
 }
-// provide a simplified interface to a larger, more complex subsystems,
